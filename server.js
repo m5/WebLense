@@ -61,9 +61,41 @@ app.get("/lense", function (req, res) {
       }));
     }
   }
+  if (imgUrl && !imgHeight && !imgWidth && (!imgCrop || imgCrop == false)) {
+    var pageres = new Pageres({
+      delay: 2,
+      filename: imgName
+    }).src(imgUrl, ["1080x720"], {
+      crop: false
+    }).dest('./sites/').run().then(() => console.log('done'));
+    if (redirectToPng === true) {
+      res.redirect(imgLocation);
+    } else {
+      res.send(JSON.stringify({
+        location: imgLocation +
+          '.png'
+      }));
+    }
+  }
+  if (imgUrl && !imgHeight && !imgWidth && (imgCrop || imgCrop == true)) {
+    var pageres = new Pageres({
+      delay: 2,
+      filename: imgName
+    }).src(imgUrl, ["1080x720"], {
+      crop: true
+    }).dest('./sites/').run().then(() => console.log('done'));
+    if (redirectToPng === true) {
+      res.redirect(imgLocation);
+    } else {
+      res.send(JSON.stringify({
+        location: imgLocation +
+          '.png'
+      }));
+    }
+  }
 });
 
-var listener = app.listen(process.env.PORT, function () {
+var listener = app.listen(3000, function () {
   console.log('Your app is listening on port ' +
     listener.address().port);
 });
