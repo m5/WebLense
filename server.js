@@ -6,7 +6,7 @@ app.get("/", function (req, res) {
   res.send('Okay');
 });
 app.get("/lense", function (req, res) {
-  var imgName = Math.floor(100000000 + Math.random() * 900000000) + ".png";
+  var imgName = Math.floor(100000000 + Math.random() * 900000000);
   var imgLocation = "/sites/" + imgName;
   var redirectToPng = req.query.redirect;
   if (req.query.url) {
@@ -41,7 +41,7 @@ app.get("/lense", function (req, res) {
         if (redirectToPng === true){
       res.redirect(imgLocation);
     } else {
-      res.send(JSON.stringify({location: imgLocation}));
+      res.send(JSON.stringify({location: imgLocation + '.png'}));
     }
   }
   if (imgUrl && imgHeight && imgWidth && (!imgCrop || imgCrop == false)) {
@@ -56,7 +56,7 @@ app.get("/lense", function (req, res) {
     if (redirectToPng === true){
       res.redirect(imgLocation);
     } else {
-      res.send(JSON.stringify({location: imgLocation}));
+      res.send(JSON.stringify({location: imgLocation + '.png'}));
     }
   }
 });
