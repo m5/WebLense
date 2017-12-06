@@ -61,7 +61,7 @@ app.get("/lense", function (req, res) {
   }
 function redirection() {
   if (redirectToPng == 'true') {
-    res.writeHead(200, {'Content-Type': 'image/png' });
+    // res.writeHead(200, {'Content-Type': 'image/png' });
     res.sendFile(__dirname +
         imgLocation +
         ".png");
