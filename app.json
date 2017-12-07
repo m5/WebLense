@@ -1,0 +1,7 @@
+{
+    "name": "WebLense",
+    "description": "WebLense Screenshot API",
+    "repository": "https://github.com/clarkhacks/WebLense",
+    "logo": "https://weblense.herokuapp.com/favicon.jpg",
+    "keywords": ["node", "express", "screenshot"]
+}

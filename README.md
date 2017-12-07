@@ -5,6 +5,10 @@ WebLense
 
 [✨ Remix on Glitch 🍬](https://glitch.com/edit/#!/remix/weblense)
 
+or
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/clarkhacks/WebLense)
+
 Or
 
 ```bash
