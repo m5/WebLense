@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="favicon.jpg">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+    <link rel="stylesheet" href="style.min.css">
+    <title>WebLense</title>
+
+</head>
+
+<body>
+    <section class="header">
+        <span class="header-text">Web</span>
+        <span class="header-text lense">Lense</span>
+    </section>
+    <section class="container">
+        <div class="pure-form pure-form-aligned">
+            <fieldset>
+                <div class="pure-control-group">
+                    <input id="url" type="text" placeholder="https://example.com/">
+                </div>
+
+                <div class="pure-control-group">
+                    <input id="width" type="text" placeholder="Width">
+                </div>
+
+                <div class="pure-control-group">
+                    <input id="height" type="text" placeholder="Height">
+                </div>
+
+                <button id="submit" class="pure-button pure-button-primary">Submit</button>
+            </fieldset>
+        </div>
+    </section>
+    <a href="https://clarkhacks.com/" class="credit">A ClarkHacks Product</a>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $("#submit").click(function () {
+            var imgwidth = $('#width').val();
+            var imgheight = $('#height').val();
+            var imgurl = $('#url').val();
+            $('input').val('');
+            $('<img />').attr({
+                'src': '/loading.gif',
+                'class': 'loading'
+            }).appendTo('.container')
+
+            setTimeout(
+                function () {
+                    $('img').removeClass('loading').attr('src', window.location.href + "/lense?url=" +
+                        imgurl +
+                        "&width=" +
+                        imgwidth +
+                        "&height=" +
+                        imgwidth);
+                }, 5000);
+
+
+        });
+    </script>
+</body>
+
+</html>

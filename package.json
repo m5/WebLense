@@ -1,7 +1,7 @@
 {
-  "name": "my-glitch-app",
-  "version": "0.0.1",
-  "description": "What am I about?",
+  "name": "weblense",
+  "version": "1.0.3",
+  "description": "Web Lense is a fast, easy, and selfhosted web screenshot api.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -14,12 +14,12 @@
     "node": "8.x"
   },
   "repository": {
-    "url": "https://glitch.com/edit/#!/welcome-project"
+    "url": "https://github.com/clarkhacks/WebLense.git"
   },
   "license": "MIT",
   "keywords": [
     "node",
-    "glitch",
-    "express"
+    "screenshot",
+    "api"
   ]
 }
